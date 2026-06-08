@@ -1,11 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthFlow - Secure Authentication Made Simple</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        accent: '#7C3AED',
+                        neutral: '#F3F4F6',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: Inter, sans-serif; }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-white text-gray-800">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center font-bold">
+                    A
+                </div>
+                <span class="text-xl font-bold text-primary">AuthFlow</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="hover:text-primary transition">Home</a>
+                <a href="#" class="hover:text-primary transition">Login</a>
+                <a href="#" class="hover:text-primary transition">Sign Up</a>
+            </div>
+
+            <!-- Mobile Button -->
+            <button id="menuBtn" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden pb-4">
+            <a href="#" class="block py-2 hover:text-primary">Home</a>
+            <a href="#" class="block py-2 hover:text-primary">Login</a>
+            <a href="#" class="block py-2 hover:text-primary">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="bg-gradient-to-r from-primary to-accent text-white">
+    <div class="max-w-7xl mx-auto px-6 py-24 text-center">
+
+        <h1 class="text-4xl md:text-6xl font-bold">
+            Secure Authentication Made Simple
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-indigo-100">
+            Create accounts, sign in securely, and manage authentication with ease.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition">
+                Get Started
+            </a>
+            <a href="#" class="border border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition">
+                Login
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="py-20 bg-neutral">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h2 class="text-3xl font-bold mb-12">Features</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Secure Login -->
+            <div class="bg-white p-8 rounded-xl shadow hover:-translate-y-2 transition">
+                <i class="fas fa-shield-halved text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-3">Secure Login</h3>
+                <p class="text-gray-600">
+                    Protect user accounts with modern authentication systems.
+                </p>
+            </div>
+
+            <!-- Easy Registration -->
+            <div class="bg-white p-8 rounded-xl shadow hover:-translate-y-2 transition">
+                <i class="fas fa-user-plus text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-3">Easy Registration</h3>
+                <p class="text-gray-600">
+                    Fast and smooth onboarding experience for users.
+                </p>
+            </div>
+
+            <!-- Password Recovery -->
+            <div class="bg-white p-8 rounded-xl shadow hover:-translate-y-2 transition">
+                <i class="fas fa-key text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-3">Password Recovery</h3>
+                <p class="text-gray-600">
+                    Secure and reliable password reset system.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <h2 class="text-3xl font-bold mb-14">How It Works</h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <div>
+                <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3 class="mt-4 font-semibold text-xl">Create Account</h3>
+            </div>
+
+            <div>
+                <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl">
+                    <i class="fas fa-right-to-bracket"></i>
+                </div>
+                <h3 class="mt-4 font-semibold text-xl">Login Securely</h3>
+            </div>
+
+            <div>
+                <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl">
+                    <i class="fas fa-unlock-keyhole"></i>
+                </div>
+                <h3 class="mt-4 font-semibold text-xl">Recover Password</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="bg-primary text-white py-20 text-center">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+        <div>
+            <i class="fas fa-users text-3xl mb-3"></i>
+            <h3 class="text-4xl font-bold">1000+</h3>
+            <p>Users</p>
+        </div>
+
+        <div>
+            <i class="fas fa-server text-3xl mb-3"></i>
+            <h3 class="text-4xl font-bold">99.9%</h3>
+            <p>Uptime</p>
+        </div>
+
+        <div>
+            <i class="fas fa-headset text-3xl mb-3"></i>
+            <h3 class="text-4xl font-bold">24/7</h3>
+            <p>Support</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-20 bg-neutral text-center">
+    <h2 class="text-3xl font-bold">Ready to Get Started?</h2>
+    <p class="mt-4 text-gray-600">Join thousands using AuthFlow today.</p>
+
+    <a href="#" class="inline-block mt-8 bg-primary text-white px-8 py-4 rounded-lg hover:bg-accent transition">
+        Create Account
+    </a>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div>
+            <h3 class="text-white text-xl font-bold">AuthFlow</h3>
+            <p class="mt-3">Modern authentication for modern apps.</p>
+        </div>
+
+        <div>
+            <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+            <ul class="space-y-2">
+                <li>Home</li>
+                <li>Login</li>
+                <li>Sign Up</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="text-white font-semibold mb-3">Social</h4>
+            <div class="flex gap-4 text-xl">
+                <i class="fab fa-twitter hover:text-white cursor-pointer"></i>
+                <i class="fab fa-github hover:text-white cursor-pointer"></i>
+                <i class="fab fa-linkedin hover:text-white cursor-pointer"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-10 border-t border-gray-700 pt-6">
+        © 2026 AuthFlow. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
 </body>
 </html>
