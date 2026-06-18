@@ -56,3 +56,18 @@ Technologies Used
 - JavaScript
 - Git
 - GitHub
+
+authflow-ui-project/
+│
+├── index.html
+├── login.html
+├── signup.html
+├── forgot-password.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── README.md
