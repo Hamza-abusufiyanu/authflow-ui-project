@@ -92,3 +92,17 @@ The project was tested across different pages to ensure proper navigation, layou
 ### Result
 All pages functioned correctly and no critical issues were identified.
 Added by Abdulmunaf Ibrahim NAS/STE/21/1102 
+
+
+## Responsive Design Review
+
+The project interface was reviewed across multiple screen sizes including mobile, tablet, and desktop devices.
+
+### Review Areas
+- Form responsiveness
+- Navigation responsiveness
+- Button scaling
+- Layout adaptation
+
+### Result
+The application maintains usability and visual consistency across supported devices.
